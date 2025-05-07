@@ -144,4 +144,8 @@ document.getElementById('calculate-btn').onclick = showResults;
 // عرض الجدول الابتدائي
 renderTable();
 
+// وظيفة إغلاق النافذة 
+function closeAlert() {
+  document.getElementById('alertOverlay').style.display = 'none';
+}
 // باقي لك  انك تعدل على الكود في حال تساوت المعايير 
