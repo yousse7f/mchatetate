@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أداة مقارنة العناصر</title>
-
+  <title>مصفوفة حسم التردد </title>
   <!-- خطوط Google -->
   <link href="https://fonts.googleapis.com/css2?family=Kairo:wght@300;400;600;800&display=swap" rel="stylesheet">
   <!-- أيقونات Font Awesome -->
@@ -18,7 +17,7 @@
 
 <body>
   <header id="main-header">
-    <h1><i class="fa-solid fa-table-list"></i> أداة مقارنة العناصر</h1>
+    <h1><i class="fa-solid fa-table-list"></i> مصفوفة حسم التردد</h1>
   </header>
 
   <div id="container">
@@ -26,7 +25,7 @@
       <div>
         <h6><i class="fa-solid fa-plus"></i> إضافة عنصر</h6>
         <input type="text" id="new-item-name" placeholder="اسم العنصر">
-        <button id="add-item-btn"><i class="fa-solid fa-plus-circle"></i> إضافة عنصر</button>
+        <button id="add-item-btn"><i class="fa-solid fa-plus-circle"></i> أخل الرغبة</button>
       </div>
       <div>
         <h6><i class="fa-solid fa-scale-balanced"></i> إضافة معيار</h6>
@@ -44,20 +43,34 @@
         </thead>
         <tbody></tbody>
       </table>
-      <button id="calculate-btn"><i class="fa-solid fa-calculator"></i> احسب</button>
+      <button id="calculate-btn"><i class="fa-solid fa-calculator"></i> أعطني الأفضل</button>
     </div>
 
     
     <div id="result">
 
-      <div id="summary"><h6>الملخص</h6><p id="summary-text"></p></div>
+      <div id="summary"><h6>الخيار الأفضل لك هو: </h6><p id="summary-text"></p></div>
       
-      <div id="recommendations"><h6>التوصيات</h6><ul id="recommendations-list"></ul></div>
+      <div id="recommendations"><h6>إن أردت تطوير بعض المعايير إليك التوصيات</h6><ul id="recommendations-list"></ul></div>
       <div id="chart-container">
         <canvas id="chart"></canvas>
       </div>
     </div>
   </div>
+<!-- نافذة التنبيهات -->
+  <div class="overlay" id="alertOverlay">
+    <div class="alert-box">
+      <h2>تنبيه !!</h2>
+      <p>إقرأ التعليمات قبل البدء .</p>
+      <ul type="square" id="alerts">
+        <li>قم بإدخال العنصر الذي تريد مقارنته</li>
+        <li>قم بإدخال معيار المفاضلة</li>
+        <li>حدد قوة المعيار </li>
+    </ul>
+      <button onclick="closeAlert()">فهمت</button>
+    </div>
+  </div>
+  <!-- --------------- -->
 
   <footer id="main-footer">
     <p>جميع الحقوق محفوظة &copy; 2025 </p>
