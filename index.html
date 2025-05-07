@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أداة مقارنة العناصر</title>
+
+  <!-- خطوط Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Kairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- أيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header id="main-header">
+    <h1><i class="fa-solid fa-table-list"></i> أداة مقارنة العناصر</h1>
+  </header>
+
+  <div id="container">
+    <div id="header">
+      <div>
+        <h6><i class="fa-solid fa-plus"></i> إضافة عنصر</h6>
+        <input type="text" id="new-item-name" placeholder="اسم العنصر">
+        <button id="add-item-btn"><i class="fa-solid fa-plus-circle"></i> إضافة عنصر</button>
+      </div>
+      <div>
+        <h6><i class="fa-solid fa-scale-balanced"></i> إضافة معيار</h6>
+        <input type="text" id="new-criterion-name" placeholder="اسم المعيار">
+        <h6>قوة المعيار:</h6>
+        <input type="number" id="new-criterion-weight" placeholder="قوة المعيار" min="1" max="10" value="1">
+        <button id="add-criterion-btn"><i class="fa-solid fa-weight-hanging"></i> إضافة معيار</button>
+      </div>
+    </div>
+
+    <div id="body">
+      <table id="comparison-table">
+        <thead>
+          <tr><th>العنصر</th><th>المعايير</th><th>المجموع</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="calculate-btn"><i class="fa-solid fa-calculator"></i> احسب</button>
+    </div>
+
+    
+    <div id="result">
+
+      <div id="summary"><h6>الملخص</h6><p id="summary-text"></p></div>
+      
+      <div id="recommendations"><h6>التوصيات</h6><ul id="recommendations-list"></ul></div>
+      <div id="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer id="main-footer">
+    <p>جميع الحقوق محفوظة &copy; 2025 </p>
+    <p>فكرة د. يوسف الجابري</p>
+    <p> برمجة : يوسف محمد عبد الله</p>
+
+
+  </footer>
+
+  <script src="scripte.js"></script>
+</body>
+</html>
