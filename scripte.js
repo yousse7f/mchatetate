@@ -3,7 +3,11 @@ const criteria = [];
 const MAX_SCORE = 10, MIN_SCORE = 1;
 let chart;
 
-function addItem(name) {
+// تغيير اللغة 
+let langAr = true;
+
+// _________ دالة إضافة العناصر    ______________
+function addItem(name){
   if (!name) return;
   // إضافة عنصر جديد
   const newItem = { name, scores: {} };
@@ -14,7 +18,10 @@ function addItem(name) {
   items.push(newItem);
   renderTable();
 }
+// _________ ^دالة إضافة العناصر ^____________
 
+
+// _________ دالة إضافة المعايير ______________
 function addCriterion(name, weight) {
   if (!name || weight < 1) return;
   // إضافة معيار جديد
@@ -25,12 +32,16 @@ function addCriterion(name, weight) {
   });
   renderTable();
 }
+// _________ ^دالة إضافة المعايير ^____________
+
 
 function updateScore(i, cName, value) {
   const v = Math.max(MIN_SCORE, Math.min(MAX_SCORE, +value || MIN_SCORE));
   items[i].scores[cName] = v;
   renderTable();
 }
+
+// _________ دالة حساب المعايير____________
 
 function calculateResults() {
   const maxTotal = criteria.reduce((sum, c) => sum + c.weight * MAX_SCORE, 0);
@@ -44,6 +55,10 @@ function calculateResults() {
   })
   .sort((a, b) => b.total - a.total);
 }
+// _________ ^دالة حساب المعايير^___________
+
+
+
 
 function renderTable() {
   const thead = document.querySelector('#comparison-table thead tr');
@@ -63,7 +78,6 @@ function renderTable() {
         const safeName = encodeURIComponent(c.name);
         return `<td>
           <input
-            type="number"
             min="${MIN_SCORE}"
             max="${MAX_SCORE}"
             value="${it.scores[c.name]}"
@@ -148,4 +162,34 @@ renderTable();
 function closeAlert() {
   document.getElementById('alertOverlay').style.display = 'none';
 }
-// باقي لك  انك تعدل على الكود في حال تساوت المعايير 
+
+function c(){
+
+  const res = calculateResults();
+  if (!res.length) return;
+  const best = res[0];
+  // نص الملخص بصياغة محسّنة
+  document.getElementById('summary-text').textContent =
+    ` كل العناصر متساوية: ${best.name} بمجموع  ${best.total}، ونسبة ${best.percent}%`;
+  
+  // بناء قائمة التوصيات بناءً على كل معيار لم يصل فيه أفضل عنصر إلى الدرجة القصوى
+  const recList = document.getElementById('recommendations-list');
+  recList.innerHTML = '';
+  criteria.forEach(c => {
+    const bestScore = items.find(it => it.name === best.name).scores[c.name];
+    if (bestScore < MAX_SCORE) {
+      const improvement = ((MAX_SCORE - bestScore) / MAX_SCORE * 100).toFixed(0);
+      const li = document.createElement('li');
+      li.textContent =
+        `معيار "${c.name}" للعنصر "${best.name}" يساوي ${bestScore} من ${MAX_SCORE}؛ يُنصح بتحسينه بنسبة ${improvement}٪.`;
+      recList.appendChild(li);
+    }
+  });
+  if (!recList.childElementCount) {
+    recList.innerHTML = `<li>جميع معايير العنصر "${best.name}"   مكتملة، لاتوجد توصيات  .</li>`;
+  }
+  drawChart(res);
+
+}
+
+
