@@ -204,30 +204,30 @@ function bindUIActions() {
 
 
 
-// function handleAlert() {
-//   const overlay = document.getElementById('alertOverlay');
-//   const step = Number(overlay.dataset.step);
+function handleAlert() {
+  const overlay = document.getElementById('alertOverlay');
+  const step = Number(overlay.dataset.step);
 
-//   if (step === 1) {
-//     // الخطوة الثانية: عرض التعليمات
-//     overlay.querySelector('.alert-box').innerHTML = `
-//         <div class="alert-box">
-//             <h2>تنبيه !!</h2>
-//             <p>إقرأ التعليمات قبل البدء .</p>
-//             <ul type="square" id="alerts">
-//                 <li>قم بإدخال العنصر الذي تريد مقارنته</li>
-//                 <li>قم بإدخال معيار المفاضلة</li>
-//             </ul>
-//             <button onclick="handleAlert()">فهمت</button>
-//         </div>
-//     `;
-//     overlay.dataset.step = "2";
+  if (step === 1) {
+    // الخطوة الثانية: عرض التعليمات
+    overlay.querySelector('.alert-box').innerHTML = `
+        <div class="alert-box">
+            <h2>تنبيه !!</h2>
+            <p>إقرأ التعليمات قبل البدء .</p>
+            <ul type="square" id="alerts">
+                <li>قم بإدخال العنصر الذي تريد مقارنته</li>
+                <li>قم بإدخال معيار المفاضلة</li>
+            </ul>
+            <button onclick="handleAlert()">فهمت</button>
+        </div>
+    `;
+    overlay.dataset.step = "2";
 
-//   } else {
-//     // الخطوة الثالثة: إغلاق النافذة
-//     overlay.style.display = 'none';
-//   }
-// }
+  } else {
+    // الخطوة الثالثة: إغلاق النافذة
+    overlay.style.display = 'none';
+  }
+}
 
 
 
