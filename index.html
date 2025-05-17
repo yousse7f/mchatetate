@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مصفوفة حسم التردد </title>
+    <title>قراري</title>
     <!-- خطوط Google -->
     <link href="https://fonts.googleapis.com/css2?family=Kairo:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- أيقونات Font Awesome -->
@@ -18,7 +18,7 @@
 
 <body>
     <header id="main-header">
-        <h1><i class="fa-solid fa-table-list"></i> مصفوفة حسم التردد</h1>
+        <h1><i class="fa-solid fa-table-list"></i> قراري </h1>
     </header>
 
     <div id="container">
@@ -26,17 +26,17 @@
             <div>
                 <h6><i class="fa-solid fa-plus"></i> إضافة عنصر</h6>
                 <input type="text" id="new-item-name" placeholder="اسم العنصر">
-                <button id="add-item-btn"><i class="fa-solid fa-plus-circle"></i> أخل الرغبة</button>
+                <button id="add-item-btn"><i class="fa-solid fa-plus-circle"></i> أدخل الرغبة</button>
             </div>
             <div>
                 <h6><i class="fa-solid fa-scale-balanced"></i> إضافة معيار</h6>
                 <input type="text" id="new-criterion-name" placeholder="اسم المعيار">
-                <h6>قوة المعيار:</h6>
+                <!-- <h6>قوة المعيار:</h6>
                 <input type="number" id="new-criterion-weight" placeholder="قوة المعيار" min="1" max="10" value="1"
                     required oninvalid="this.setCustomValidity('الرجاء إدخال رقم بين 1 و 10 فقط')" oninput="
       this.setCustomValidity('');
       this.reportValidity();      
-    ">
+    "> -->
                 <button id="add-criterion-btn"><i class="fa-solid fa-weight-hanging"></i> إضافة معيار</button>
             </div>
         </div>
@@ -52,8 +52,23 @@
                 </thead>
                 <tbody></tbody>
             </table>
-            <button id="calculate-btn"><i class="fa-solid fa-calculator"></i> أعطني الأفضل</button>
+
         </div>
+
+        <div id="report-details"></div>
+
+        <button id="calculate-btn"><i class="fa-solid fa-calculator"></i> أعطني الأفضل</button>
+        <!-- طباعة -->
+        <button id="print-report"><i class="fa-solid fa-print"></i> طباعة</button>
+        <!-- الحفظ في اللوكال ستوريج -->
+        <button id="save-report"><i class="fa-solid fa-save"></i> حفظ</button>
+        <!-- عرض سجل البيانت المحفوظة في اللوكال استورج -->
+        <button id="show-btn"><i class="fa-solid fa-folder-open"></i> عرض</button>
+        <!-- حذف كل البيانت من اللوكال استورج -->
+        <button id="delete-btn"><i class="fa-solid fa-trash"></i> حذف</button>
+        <!-- رجوع -->
+        <!-- <button id="to-bake"onclick="location.reload()">رجوع</button> -->
+
 
 
         <div id="result">
@@ -72,19 +87,25 @@
             </div>
         </div>
     </div>
-    <!-- نافذة التنبيهات -->
-    <div class="overlay" id="alertOverlay">
+    <!-- نافذة الترحيب والتنبيهات  -->
+    <div class="overlay" id="alertOverlay" data-step="1">
         <div class="alert-box">
-            <h2>تنبيه !!</h2>
-            <p>إقرأ التعليمات قبل البدء .</p>
-            <ul type="square" id="alerts">
-                <li>قم بإدخال العنصر الذي تريد مقارنته</li>
-                <li>قم بإدخال معيار المفاضلة</li>
-                <li>حدد قوة المعيار </li>
-            </ul>
-            <button onclick="closeAlert()">فهمت</button>
+            <p>هل تواجه صعوبة في اتخاذ قرار مصيري؟
+
+            <p>هل تحتار بين خيارات مثل التجارة الوظيفة، الزواج أو السفر؟</p>
+            <p>تحليل واضح ومتوازن يزيل عنك التردد ويقودك إلى القرار الصحيح بثقة ويقين. <br>"قراري" هو أداة ذكية تساعدك
+                على
+                تقييم الخيارات بناء على معايير علمية من 1 إلى 10 لتحصل على تحليل واضح ومتوازن يزيل عنك التردد ويقودك إلى
+                القرار الصحيح بثقة ويقين.
+            </p>
+            <p>ابدأ رحلتك نحو الوضوح - واتخذ قرارك الدقيق</p>
+            </p>
+            <button onclick="handleAlert()">التالي</button>
         </div>
     </div>
+
+
+
     <!-- --------------- -->
 
     <footer id="main-footer">
@@ -95,7 +116,10 @@
 
     </footer>
 
-    <script src="scripte.js"></script>
+
+
+
+    <script src="test.js"></script>
 </body>
 
 </html>
