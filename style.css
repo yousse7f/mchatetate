@@ -1,11 +1,23 @@
+/* استيراد الخط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:slnt,wght@-11..11,200..1000&display=swap');
+
 /* عام */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+    font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" <slant>;
 }
 
+
 body {
+
   background: #f0f4f8;
   color: #333;
   font-family: 'Kairo', sans-serif;
@@ -256,5 +268,252 @@ input[type="number"] {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+
+
+
+
+/* التصميم v2 */
+
+/*  الاصدار2 */
+
+
+/* الخطوط الأساسية */
+body {
+  font-family: 'Kairo', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+/* الهيكل العام */
+#container {
+  max-width: 1000px;
+  margin: 20px auto 40px auto;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* الهيدر */
+#main-header {
+  background: #005f73;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* عنوان الهيدر الرئيسي */
+#main-header i {
+  margin-left: 10px;
+  color: #94d2bd;
+}
+
+/* قسم إضافة العناصر والمعايير */
+#header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* كل مربع إدخال */
+#header > div {
+  background: #e0fbfc;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 45%;
+  box-shadow: inset 0 0 5px #98c1d9;
+}
+
+/* عناوين الإضافة */
+#header h6 {
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  color: #0a9396;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+#header h6 i {
+  margin-left: 8px;
+  color: #005f73;
+}
+
+/* حقول الإدخال */
+#header input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #94d2bd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#header input[type="text"]:focus {
+  border-color: #005f73;
+  background: #e0f7fa;
+}
+
+/* أزرار الإضافة */
+#header button {
+  margin-top: 12px;
+  width: 100%;
+  background: #0a9396;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#header button:hover {
+  background: #005f73;
+}
+
+/* جدول المقارنة */
+#comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+#comparison-table th,
+#comparison-table td {
+  border: 1px solid #94d2bd;
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#comparison-table thead {
+  background-color: #0a9396;
+  color: white;
+}
+
+#comparison-table tbody tr:nth-child(even) {
+  background: #e0fbfc;
+}
+
+/* أزرار التحكم في الأسفل */
+#calculate-btn,
+#print-report,
+#save-report,
+#show-btn,
+#delete-btn {
+  background: #005f73;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 12px 20px;
+  margin: 8px 6px 0 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#calculate-btn:hover,
+#print-report:hover,
+#save-report:hover,
+#show-btn:hover,
+#delete-btn:hover {
+  background: #0a9396;
+}
+
+/* نتيجة التقرير */
+#result {
+  margin-top: 30px;
+  background: #caf0f8;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(10, 147, 150, 0.3);
+}
+
+#summary h6,
+#recommendations h6 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #005f73;
+  font-size: 1.2rem;
+}
+
+#summary-text {
+  font-size: 1.1rem;
+  margin: 10px 0 15px 0;
+  font-weight: 600;
+  color: #0a9396;
+}
+
+#recommendations-list {
+  list-style-type: disc;
+  padding-right: 20px;
+  color: #05668d;
+  font-weight: 500;
+}
+
+/* الرسم البياني */
+#chart-container {
+  margin-top: 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* الفوتر */
+#main-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #005f73;
+  color: #caf0f8;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+  }
+
+  #header > div {
+    flex: 1 1 100%;
+  }
+
+  #comparison-table th,
+  #comparison-table td {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  #calculate-btn,
+  #print-report,
+  #save-report,
+  #show-btn,
+  #delete-btn {
+    width: 100%;
+    margin: 10px 0 5px 0;
   }
 }
