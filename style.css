@@ -279,7 +279,6 @@ input[type="number"] {
 
 /*  الاصدار2 */
 
-
 /* الخطوط الأساسية */
 body {
   font-family: 'Kairo', sans-serif;
@@ -517,3 +516,85 @@ body {
     margin: 10px 0 5px 0;
   }
 }
+
+
+
+/* ------------------------------------------------------------------------------- */
+/* زر السبينر الذي لا يظهر الا في الهواتف  */
+
+/* Spinner زر */
+
+  /* اتجاه RTL */
+  .input-btn-container {
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .input-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  #container-sp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 30px;
+    flex-direction: row;
+  }
+
+  #input-number {
+    padding: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 2px solid rgb(144, 154, 69);
+    border-radius: 5px;
+    margin-left: 0;
+  }
+
+  #buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .increment-btn,
+  .decrement-btn {
+    background-color: #e7e7e7;
+    color: rgb(69, 154, 97);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .increment-btn:hover,
+  .decrement-btn:hover {
+    background-color: #b4b4b4;
+    color: rgb(7, 215, 243);
+  }
+
+  #input-number:focus {
+    outline: none;
+    border-color: rgb(190, 31, 31);
+  }
+
+  /* إخفاء أزرار السبينر على الشاشات الكبيرة */
+  @media (min-width: 768px) {
+    .increment-btn,
+    .decrement-btn {
+      display: none !important;
+    }
+  }
+
+/* ------------------------------------------------------------------------------- */
