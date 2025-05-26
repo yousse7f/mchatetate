@@ -450,7 +450,6 @@
 // renderTable();
 // bindUIActions();
 
-
 // تعريف المتغيرات الأساسية والمصفوفات والثوابت المستخدمة في التطبيق
 const items = [];           // قائمة العناصر التي سيتم تقييمها
 const criteria = [];        // قائمة المعايير المستخدمة للمقارنة
@@ -493,6 +492,21 @@ function addCriterion(name) {
   renderTable(); // إعادة رسم الجدول بعد التحديث
 }
 
+
+// /* الضغط على Enter يعني الضغط على زر ادخل العنصر او زر ادخل الرغبة  عند تعبئته */
+// عند الضغط على Enter في أي من حقلي الإدخال، يتم تنفيذ الإجراء المناسب
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    const active = document.activeElement;
+    if (active && active.id === "new-item-name") {
+      addItem(active.value.trim());
+      active.value = "";
+    } else if (active && active.id === "new-criterion-name") {
+      addCriterion(active.value.trim());
+      active.value = "";
+    }
+  }
+});
 /**
  * دالة لتحديث تقييم عنصر معين لمعيار محدد.
  * @param {number} itemIndex - فهرس العنصر في القائمة.
@@ -964,4 +978,3 @@ document.getElementById("delete-btn")?.addEventListener("click", () => {
 // إعادة رسم الجدول وربط إجراءات واجهة المستخدم عند تحميل الكود
 renderTable();
 bindUIActions();
-
